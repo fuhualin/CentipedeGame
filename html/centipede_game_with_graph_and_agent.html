@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centipede Game - Visualization!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Norican&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="icon" type="image/png" href="../favicon.ico" sizes="64x64">
+</head>
+
+<body>
+    <div id="game">
+        <div class="canvas">
+            <canvas id="centipede_graph" width="300" height="1100"></canvas>
+        </div>
+        <div id="main">
+            <div class="title">
+                <a href="../index.html"><img class="logo logo-centipede" src="../img/centipede_icon.png"></a>
+                <h1>Centipede Game</h1>
+                <img class="logo logo-bag" src="../img/money_bag.png">
+            </div>
+            <button id="help" class="help"><img src="../img/q_mark_icon.png" alt="?" style="width: 1rem; height: auto;"><short class="help_label">Help</short></button>
+            <div id="intro">
+                <p class="brief_introduction">On this site you can play the Centipede Game.</p>
+                <p>There are two players switching turns and
+                    by
+                    continuing they increase the payoff but also the chance the other player quits for getting a better
+                    payoff. The name "Centipede" comes from the graph you can draw for the possible payoffs of each player.
+                </p>
+                <div class="desc_img_container">
+                    <img class="desc_img" src="../img/centipede_game_desc.png" alt="game description">
+                    <img class="desc_img" src="../img/centipede_graph_desc.png" alt="game description">
+                </div>
+                <p>Based on Backwards Induction the best play for the first player is to quit on the first round, if they
+                    expect, the game won't continue till the end. Player 1 can choose first if to continue or end the
+                    game, then it's player 2's turn. It continues till one of the players is ending the game or the last
+                    round is reached.</p>
+                <button id="close_help" style="width: 5rem; place-self: center;">close</button>
+            </div>
+            <p id="round">Round: <short><short id="round_value">0</short>/15</short></p>
+            <p class="player_turn">Player Turn: <short id="player_turn"></short></p>
+            <div class="game_center">
+                <p id="p2_score" class="score">P2 Score (CPU): <short id="p2_score_value">0</short></p>
+                <div style="display: flex; place-content: center;">
+                    <div class="pot animation" style="width: fit-content;"><short id="p2_score_addition"></short>2$<short id="p1_score_addition"></short></div>
+                </div>
+                <div class="buttons" style="place-content: center;">
+                    <button id="continue" class="button button_shadow">continue</button>
+                    <button id="end" class="button button_shadow">end</button>
+                </div>
+                <p id="p1_score" class="score">P1 Score (You): <short id="p1_score_value">0</short></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="module" src="../js/control/setScore.js"></script>
+<script type="module" src="../js/util/hideScreenElements.js"></script>

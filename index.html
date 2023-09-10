@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centipede Game - Visualization!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Norican&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" type="image/png" href="favicon.ico" sizes="64x64">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+
+<body>
+    <div class="title" style="justify-content: center;">
+        <img class="logo logo-centipede" src="./img/centipede_icon.png">
+        <h1>Centipede Game</h1>
+        <img class="logo logo-bag" src="./img/money_bag.png">
+    </div>
+    <div id="main">
+        <div class="introduction">
+            <p>This is a Visualization of the Centipede Game in Game Theory. There are two players switching turns and
+                by
+                continuing they increase the payoff but also the chance the other player quits for getting a better
+                payoff. The name "Centipede" comes from the graph you can draw for the possible payoffs of each player.
+            </p>
+            <div id="game_theory">
+                <h3>Broader Game Theory Introduction:</h3>
+                <div id="includedContent"></div>
+                <div><button id="intro-prev-button" class="button_shadow"><< prev</button><button id="intro-continue-button" class="button_shadow">next >></button></div>
+            </div> 
+
+            <h3>Let's Play!</h3>
+            <p>On the following page two persons or one person and a computer can play the game. Player 1 can choose
+                first if to <strong>continue</strong> or <strong>end</strong> the
+                game, then it's player 2's turn. It continues till one of the players is ending the game or the last
+                round is reached. The graph shows the possible payoffs for each player and the current state of the
+                game.</p>
+            <p>Based on Backwards Induction the best play for the first player is to quit on the first round, if they
+                expect, the game won't continue till the end. But more money, a longer game or social thoughts can change the perception of what is desirable.</p>
+            <p>Choose one of the buttons to play either the simple version of the Game or a version with the Centipede
+                Graph with 2 human players. The third button lets you play against a computer player.</p>
+            <div class="site_buttons" style="display: grid; justify-self: center; row-gap: 1rem;">
+                <button class="button_shadow" onclick="window.location.href='./html/centipede_game.html';">Simple Game (2
+                    Human Players)</button>
+                <button class="button_shadow" onclick="window.location.href='./html/centipede_game_with_graph.html';">Game
+                    with Centipede Graph (2 Human Players)</button>
+                <button class="button_shadow"
+                    onclick="window.location.href='./html/centipede_game_with_graph_and_agent.html';">Game with Centipede
+                    Graph (vs. Computer Player)</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./js/util/showIntroduction.js"></script>
